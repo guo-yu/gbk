@@ -1,0 +1,21 @@
+{
+  "name": "gbk",
+  "version": "0.0.0",
+  "description": "a gbk <-> utf-8 conventer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/turingou/gbk.git"
+  },
+  "keywords": [
+    "gbk"
+  ],
+  "author": "turingou",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/turingou/gbk/issues"
+  }
+}
