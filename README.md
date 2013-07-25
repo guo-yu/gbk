@@ -1,6 +1,6 @@
 # GBK ![](https://badge.fury.io/js/gbk.png)
 
-gbk <-> utf-8 made easy
+## GBK <--> utf-8 made easy
 
 ### How to install
 ```
@@ -24,5 +24,11 @@ gbk.toString('utf-8',gbkBuffer,function(string){
         if (err) throw err;
         console.log('original gbk file saved!')
     })
+});
+
+// high level - fetch a gbk-encoded html page
+gbk.fetch('http://abc.com/gbk.html',function(string){
+    // now you've get a utf-8 string
+    // do sth. with string
 });
 ````
