@@ -44,3 +44,11 @@ gbk.fetch('http://abc.com/gbk.html','utf-8').to('string',fucntion(err,string){
     }
 });
 ````
+
+### Run demo
+
+````
+$ git clone https://github.com/turingou/gbk.git
+$ cd gbk`
+$ node ./demo/demo.js
+````
