@@ -1,6 +1,6 @@
 {
   "name": "gbk",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "a gbk <-> utf-8 conventer",
   "main": "index.js",
   "scripts": {
@@ -17,5 +17,9 @@
   "license": "BSD",
   "bugs": {
     "url": "https://github.com/turingou/gbk/issues"
+  },
+  "dependencies": {
+    "request": "*",
+    "iconv-lite": "*"
   }
 }

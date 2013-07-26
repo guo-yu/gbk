@@ -4,7 +4,7 @@
 
 ### How to install
 ```
-npm install gbk
+$ npm install gbk
 ```
 
 ### Simple code
@@ -12,7 +12,7 @@ npm install gbk
 ````javascript
 var gbk = require('gbk');
 
-// from some gbkBuffer
+// low level - from some gbkBuffer
 // e.g: request({url: 'xxx.gbk.html',encoding:null }) will callback with a buffer
 gbk.toString('utf-8',gbkBuffer,function(string){
     // got an uft-8 string
@@ -26,9 +26,20 @@ gbk.toString('utf-8',gbkBuffer,function(string){
     })
 });
 
-// high level - fetch a gbk-encoded html page
-gbk.fetch('http://abc.com/gbk.html',function(string){
-    // now you've get a utf-8 string
-    // do sth. with string
+// high level - fetch a gbk-encoded html page and save it
+gbk.fetch('http://abc.com/gbk.html').to('./demoGbk.html');
+
+// high level - fetch a gbk-encoded html page and save it and to sth in the callback
+gbk.fetch('http://abc.com/gbk.html').to('./demoGbk.html',fucntion(err,dist){
+    if (!err) {
+        // to sth when it has been saved(gbk-encoded)
+    }
+});
+
+// high level - fetch a gbk-encoded html page and got utf-8 string
+gbk.fetch('http://abc.com/gbk.html','utf-8').to('string',fucntion(err,string){
+    if (!err) {
+        // to sth width utf-8 encoded string
+    }
 });
 ````

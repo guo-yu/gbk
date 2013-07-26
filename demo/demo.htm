@@ -1,0 +1,1709 @@
+
+<!doctype html>
+<html>
+<head>
+	<meta charset="GBK" />
+	<title>快捷支付（含卡通） - 付款方式 - 支付宝 知托付！</title>
+			
+
+<link rel="icon" href="https://img.alipay.com/common/favicon/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="https://img.alipay.com/common/favicon/favicon.ico" type="image/x-icon" />
+	<!--[if lt IE 9]>
+	<script type="text/javascript">
+	// html5shiv MIT @rem remysharp.com/html5-enabling-script
+	// iepp v1.6.2 MIT @jon_neal iecss.com/print-protector
+	/*@cc_on(function(a,b){function r(a){var b=-1;while(++b<f)a.createElement(e[b])}if(!(!window.attachEvent||!b.createStyleSheet||!function(){var a=document.createElement("div");a.innerHTML="<elem></elem>";return a.childNodes.length!==1}())){a.iepp=a.iepp||{};var c=a.iepp,d=c.html5elements||"abbr|article|aside|audio|canvas|datalist|details|figcaption|figure|footer|header|hgroup|mark|meter|nav|output|progress|section|summary|time|video",e=d.split("|"),f=e.length,g=new RegExp("(^|\\s)("+d+")","gi"),h=new RegExp("<(/*)("+d+")","gi"),i=/^\s*[\{\}]\s*$/,j=new RegExp("(^|[^\\n]*?\\s)("+d+")([^\\n]*)({[\\n\\w\\W]*?})","gi"),k=b.createDocumentFragment(),l=b.documentElement,m=l.firstChild,n=b.createElement("body"),o=b.createElement("style"),p=/print|all/,q;c.getCSS=function(a,b){if(a+""===undefined)return"";var d=-1,e=a.length,f,g=[];while(++d<e){f=a[d];if(f.disabled)continue;b=f.media||b,p.test(b)&&g.push(c.getCSS(f.imports,b),f.cssText),b="all"}return g.join("")},c.parseCSS=function(a){var b=[],c;while((c=j.exec(a))!=null)b.push(((i.exec(c[1])?"\n":c[1])+c[2]+c[3]).replace(g,"$1.iepp_$2")+c[4]);return b.join("\n")},c.writeHTML=function(){var a=-1;q=q||b.body;while(++a<f){var c=b.getElementsByTagName(e[a]),d=c.length,g=-1;while(++g<d)c[g].className.indexOf("iepp_")<0&&(c[g].className+=" iepp_"+e[a])}k.appendChild(q),l.appendChild(n),n.className=q.className,n.id=q.id,n.innerHTML=q.innerHTML.replace(h,"<$1font")},c._beforePrint=function(){o.styleSheet.cssText=c.parseCSS(c.getCSS(b.styleSheets,"all")),c.writeHTML()},c.restoreHTML=function(){n.innerHTML="",l.removeChild(n),l.appendChild(q)},c._afterPrint=function(){c.restoreHTML(),o.styleSheet.cssText=""},r(b),r(k);if(c.disablePP)return;m.insertBefore(o,m.firstChild),o.media="print",o.className="iepp-printshim",a.attachEvent("onbeforeprint",c._beforePrint),a.attachEvent("onafterprint",c._afterPrint)}})(this,document)@*/
+	</script>
+	<![endif]-->
+	
+ 
+<!-- CMS:支付宝全站/监控埋点/seajs 部署开始:alipay/tracker/seajs.vm -->	
+<script type="text/javascript">
+(function(){function k(a){return(a=String(a).match(l))?a[0]:""}function f(a,m,c,f,g){if(!g&&arguments.callee.caller){for(var b=arguments.callee.caller,d=[];b.arguments&&(b.arguments.callee&&b.arguments.callee.caller)&&!(b=b.arguments.callee.caller,d.push("at "+k(b)),b.caller===b););g=d.join("\n")}b={profile:"jserror",msg:a||"",file:m||"",line:c||0,num:f||"",stack:g||"",lost:h.join(",")};e._DATAS.push(b);return b}if(!window.monitor){var e=window.monitor={};e._DATAS=[];var h=[],d={};e.lost=function(a){d.hasOwnProperty(a)||(d[a]=!0,h.push(a))};e.log=function(a,d){if(a){var c=d||"log";3===arguments.length&&(c="product",a=Array.prototype.join.call(arguments,"|"));c={profile:c,seed:String(a)};e._DATAS.push(c);return c}};var l=/^function\b[^\)]+\)/;e.error=function(a){if(a instanceof Error)return f(a.message||a.description,a.fileName,a.lineNumber||a.line,a.number,a.stack||a.stacktrace)};window.onerror=function(a,d,c){f(a,d,c);return!1}}})();
+</script>
+
+<script charset="utf-8" id="seajsnode" src="https://a.alipayobjects.com/??seajs/1.3.1/sea.js,seajs/1.3.1/plugin-combo.js,jquery/jquery/1.7.2/jquery.js"></script>
+
+<script>
+
+  (function(){
+		  
+    var JQ = '/jquery/1.7.2/jquery.js';
+	seajs.cache['https://a.alipayobjects.com/gallery' + JQ] = seajs.cache['https://a.alipayobjects.com/jquery' + JQ];
+	
+    var GALLERY_MODULES = [
+      'async','backbone','coffee','cookie','es5-safe','handlebars','iscroll',
+      'jasmine','jasmine-jquery','jquery','jquery-color','json','keymaster',
+      'labjs','less','marked','moment','mustache','querystring','raphael',
+      'socketio','store','swfobject','underscore','zepto','ztree'
+    ];
+
+    var ARALE_MODULES = [
+      'autocomplete','base','calendar','class','cookie','dialog','easing',
+      'events','iframe-uploader','iframe-shim','messenger','overlay','popup',
+      'position','select','switchable','tip','validator','widget'
+    ];
+
+    var util = seajs.pluginSDK.util;
+
+    function contains(arr, item) {
+      return util.indexOf(arr, item) > -1
+    }
+
+    function map(id) {
+      id = id.replace('#', '');
+
+      var parts = id.split('/');
+      var len = parts.length;
+      var root, name;
+
+      // id = root/name/x.y.z/name
+      if (len === 4) {
+        root = parts[0];
+        name = parts[1];
+		
+        // gallery 或 alipay 开头的没有问题
+        if (root === 'alipay' || root === 'gallery') {
+          return id;
+        }
+
+        // arale 开头的
+        if (root === 'arale') {
+          // 处理 arale/handlebars 的情况
+          if (contains(GALLERY_MODULES, name)) {
+            return id.replace('arale/', 'gallery/');
+          } else {
+            return id;
+          }
+        }
+      }
+      // id = name/x.y.z/name
+      else if (len === 3) {
+        name = parts[0]
+
+        // 开头在 GALLERY_MODULES 或 ARALE_MODULES
+        if (contains(GALLERY_MODULES, name)) {
+          return 'gallery/' + id;
+        } else if (contains(ARALE_MODULES, name)) {
+          return 'arale/' + id;
+        }
+      }
+
+      return id;
+    }
+
+    seajs.config({
+      alias: {
+        '$': 'jquery/jquery/1.7.2/jquery',
+        '$-debug': 'jquery/jquery/1.7.2/jquery',
+        'jquery': 'jquery/jquery/1.7.2/jquery'
+      }
+    });
+
+    var _use = seajs.use;
+
+    seajs.use = function(ids, callback) {
+      if (typeof ids === 'string') {
+        ids = [ids];
+      }
+
+      ids = util.map(ids, function(id) {
+        return map(id);
+      });
+
+      return _use(ids, callback);
+    }
+
+  })();
+</script><!-- CMS:支付宝全站/监控埋点/seajs 部署结束:alipay/tracker/seajs.vm -->
+<!-- CMS:支付宝全站/监控埋点/全站页面效率统计开始:alipay/tracker/tracker_time.vm --><meta name="ABTest" content="" />
+
+<script type="text/javascript">
+window._to = { start: new Date() };
+</script>
+
+
+<script charset="utf-8" src="https://a.alipayobjects.com/ar/??alipay.light.base-1.1.js,alipay.tracker-1.11.js"></script>
+
+<!-- CMS:支付宝全站/监控埋点/全站页面效率统计结束:alipay/tracker/tracker_time.vm -->	<link charset="utf-8" rel="stylesheet" href="https://a.alipayobjects.com/build/css/alice/alice.css?t=0627" media="all" />
+<link charset="utf-8" rel="stylesheet" href="https://a.alipayobjects.com/build/css/home/home.css?t=0627" media="all" />
+
+	<style type="text/css">
+		.ui-list-icons li {
+			float: left;
+		}
+		.icon-box, .icon-box-commend, .icon-box-kj {
+			background-color: #EEEEEE;
+			border: 1px solid #DDDDDD;
+			display: inline-block;
+			position: relative;
+			vertical-align: middle;
+			width: 123px;
+		}
+		.icon-box .icon, .icon-box-commend .icon, .icon-box-kj .icon {
+			background-repeat: no-repeat;
+			display: block;
+			height: 30px;
+		}
+	</style>
+	<style type="text/css">
+.ft-gray{ color:#909090;}
+.ft-blue{color:#0072ff;}
+.fn-pl20{ padding-left:20px;}
+.new-wrap h4{ margin-bottom:5px;}
+.new-wrap h3 span{ font-size:12px; font-weight:normal;}
+.cashier-bank{ overflow:hidden;}
+#more-link{ clear:both;}
+.bank-ist-btn{ height:30px;}
+
+.ui-arrow span{
+	background-image:url("https://img.alipay.com/alice/ui-icons.png");
+	display: inline-block;
+    height: 6px;
+    vertical-align: middle;
+    width: 20px;
+	font-size:0px;
+	line-height:0px;
+}
+.ui-arrow-down span{ 
+	background-position:0 -80px;
+}
+.ui-arrow-up span{ 
+	background-position:0 -76px;
+}
+span.icon{ overflow:hidden;}
+</style>
+	<!-- CMS:开始:home/bank/home_tunnel.vm --><style>
+/* 浙江泰窿商业银行 */
+.ZJTLCBKT,.zjtlcb901{
+    text-indent: -9999px;
+    background-position: 0px -1600px;
+}
+/* 晋中市商业银行 */
+.jzbank901,.JZBANKKT{
+    text-indent: -9999px;
+    background-position: 0px -3160px;
+}
+.CDRCBKT{
+    text-indent: -9999px;
+    background-position: 0px -3280px;
+}
+.CCBEPAYKT,.CCBEPAY{
+    text-indent: -9999px;
+    background-position: 0px -320px;
+}
+.CEBSCC,.CEBBCC{
+    text-indent: -9999px;
+    background-position: 0px -440px;
+}
+.JSBANKKT{
+    text-indent: -9999px;
+    background-position: 0px -1520px;
+}
+.TRCB{
+   text-indent: -9999px;
+   background-position:0 -3490px;
+}
+.BOD,.BODCC{
+   text-indent: -9999px;
+   background-position:0 -3532px;
+}
+.NXBANK,.NXBANKCC{
+   text-indent: -9999px;
+   background-position:0 -3573px;
+}
+.ZRCBANK{
+   text-indent: -9999px;
+   background-position:0 -3610px;
+}
+.CRCBANK {
+   text-indent: -9999px;
+   background-position:0 -3730px;
+}
+.SRBANK{
+   text-indent: -9999px;
+   background-position:0 -3650px;
+}
+.YNRCC{
+   text-indent: -9999px;
+   background-position:0 -3688px;
+}
+.CMBCCC{
+   text-indent: -9999px;
+   background-position:0 -120px;
+}
+.HXBANKCC{
+   text-indent:-9999px;
+   background-position:0 -680px;
+}
+.CIBCC{
+   text-indent: -9999px;
+   background-position:0 -3365px;
+}
+.ABCSHKT{
+   text-indent:-9999px;
+   background-position:0 -480px;
+}
+.SHRCBCC{
+   text-indent:-9999px;
+   background-position:0 -2480px;
+}
+.BJBANKCC{
+   background-position:0 -3240px;
+   text-indent:-9999px;
+}
+.GDBCC{
+   text-indent:-9999px;
+   background-position:0 -280px;
+}
+.JLBANK{
+   text-indent:-9999px;
+   background-position:0 -3803px;
+}
+.ASCB{
+   text-indent:-9999px;
+   background-position:0 -3766px;
+}
+.DLBCC {
+    background-position: 0 -2120px;
+    text-indent: -9999px;
+}
+.NBBANKCC{
+    background-position: 0 -1240px;
+    text-indent: -9999px;
+}
+.ICBC010{
+    background-position: 0 -40px;
+    text-indent: -9999px;
+}
+.CCB010{
+    background-position: 0 -320px;
+    text-indent: -9999px;
+}
+.ABC0755{
+    background-position: 0 -480px;
+    text-indent: -9999px;
+}
+.DYCCB{
+    background-position: 0 -3842px;
+    text-indent: -9999px;
+}
+.TCCB{
+    background-position: 0 -3877px;
+    text-indent: -9999px;
+}
+.BHB,.BHBCC{
+    background-position: 0 -3913px;
+    text-indent: -9999px;
+}
+.JSBANK,.JSBANKCC{
+    background-position: 0 -3950px;
+    text-indent: -9999px;
+}
+.ZGCCB {
+    background-position: 0 -3985px;
+    text-indent: -9999px;
+}
+.BSB{
+    background-position: 0 -4022px;
+    text-indent: -9999px;
+}
+.HZCBCC,.HZCB{
+    background-position: 0 -4058px;
+    text-indent: -9999px;
+}
+.HRXJB{
+    background-position: 0 -4093px;
+    text-indent: -9999px;
+}
+.NJCB,.NJCBCC{
+    background-position: 0 -4131px;
+    text-indent: -9999px;
+}
+</style>
+
+<style type="text/css">
+#content #ap-article-bank #pageNav{_top:255px;}
+#content #ap-article-bank .ui-popmenu-container{_height:270px;}
+#content .new-faq a{cursor:pointer;}
+#content .new-faq a:hover{text-decoration:underline;}
+body .ui-listnav{min-width:200px;}
+
+</style><!-- CMS:结束:home/bank/home_tunnel.vm --></head>
+<body>
+
+ 
+<!-- CMS:支付宝全站/全站公告/全站顶部公告开始:alipay/notice/headNotice.vm --><!--[if lte IE 7]>
+<style>.kie-bar { display: none; height: 24px; line-height: 1.8; font-weight:normal; text-align: center; border:1px solid #fce4b5; background-color:#FFFF9B; color:#e27839; position: relative; font-size: 12px; margin: 5px 0 0 0; padding: 5px 0 2px 0; } .kie-bar a { padding: 0 0 2px 20px; *+padding-top: 2px; *_padding-top: 2px; background: url(https://i.alipayobjects.com/e/201307/jYwARebNl.png) no-repeat 0 0; text-decoration: none; color:#08c; } .kie-bar a:hover { text-decoration: underline; } .kie-bar a.kie-setup-taoBrowser { background-position: 0 -20px; }</style>
+<div id="kie-bar" class="kie-bar">您现在使用的浏览器版本过低，可能会导致部分图片和信息的缺失。请立即 <a href="http://ie.alipay.com/download" class="kie-setup-IE8" seed="kie-setup-IE8" target="_blank" title="免费升级至IE8浏览器">免费升级</a> 或下载使用 <a href="http://browser.taobao.com/" class="kie-setup-taoBrowser" seed="kie-setup-taoBrowser" target="_blank" title="淘宝浏览器">淘宝浏览器</a> ，安全更放心！</div>
+<script type="text/javascript">
+function IEMode() {
+	var ua = navigator.userAgent.toLowerCase();
+	var re_trident = /\btrident\/([0-9.]+)/;
+	var re_msie = /\b(?:msie |ie |trident\/[0-9].*rv[ :])([0-9.]+)/;
+	var version;
+	if (!re_msie.test(ua)) {
+		return false;
+	}
+	var m = re_trident.exec(ua);
+	if (m) {
+		version = m[1].split(".");
+		version[0] = parseInt(version[0], 10) + 4;
+		version = version.join(".");
+	} else {
+		m = re_msie.exec(ua);
+		version = m[1];
+	}
+	return parseFloat(version);
+}
+var ie = IEMode();
+if (ie && ie < 8) {
+    document.getElementById('kie-bar').style.display = 'block';
+}
+</script>
+<![endif]-->
+
+
+
+<!-- CMS:支付宝全站/全站公告/全站顶部公告结束:alipay/notice/headNotice.vm --><div id="head">
+	<div id="h-box" class="fn-clear">
+		<h1 id="logo"><a href="https://www.alipay.com">支付宝 - 因为信任 所以简单</a></h1>
+		<p id="h-meta">
+			<span>
+							<a href="https://auth.alipay.com/login/logout.htm" target="_blank" seed="login">登录</a> - <a href="https://lab.alipay.com/user/reg/index.htm" target="_blank" seed="register">注册</a>
+						</span> |
+			<a href="http://club.alipay.com" target="_blank" seed="home-header-club">论坛</a> |
+			<a href="http://help.alipay.com/lab/index.htm" target="_blank" seed="home-header-help">帮助中心</a> |
+			<a href="/sitemap.htm" target="_blank" seed="home-header-help">网站导航</a>
+		</p>
+	</div>
+</div>
+<!-- #head -->
+
+<nav id="nav" class="nav">
+	<ul id="nav-list" class="ui-nav">
+		<li class="ui-nav-item ui-nav-item-index">
+			<a href="https://www.alipay.com" class="ui-nav-item-link">首页</a>
+		</li>
+		<li class="ui-nav-item ">
+			<a href="#" class="ui-nav-item-link ui-nav-item-link-pa">个人服务</a>
+							<table class="ui-nav-item-table">
+					<thead>
+						<tr>
+							<th>付款收款</th>
+							<th>生活助手</th>
+							<th>网购导航</th>
+							<th class="last">会员账户管理</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><a href="https://shenghuo.alipay.com/payment.htm?agent=lf_wyfk" target="_blank" seed="Nav-personal-gathering">我要付款</a></td>
+							<td><a href="https://shenghuo.alipay.com/jiaofei.htm?_ad=c&_adType=lifejf_sdm_alipaysytop" target="_blank" seed="Nav-personal-jiaofei">水电煤缴费</a></td>
+							<td><a href="http://buy.etao.com/" target="_blank" seed="Nav-etao-buy">返利商家</a></td>
+							<td class="last"><a href="http://home.alipay.com/individual/accountEdit.htm" target="_blank" seed="Nav-accout-manage">账户管理</a></td>
+						</tr>
+						<tr>
+							<td><a href="https://shenghuo.alipay.com/tocard.htm" target="_blank" seed="Nav-personal-tocard">转账到银行卡</a></td>
+							<td><a href="https://shenghuo.alipay.com/tongxun.htm??_ad=c&_adType=lifejf_sjcz_alipaysytop" target="_blank" seed="Nav-personal-mobile">手机充值</a></td>
+							<td><a href="https://communityweb.alipay.com/transmit/index.htm" target="_blank" seed="Nav-personal-weike">微客消费券</a></td>
+							<td class="last"><a href="http://home.alipay.com/individual/record.htm" target="_blank" seed="Nav-accout-record">交易记录</a></td>
+						</tr>
+						<tr>
+							<td><a href="https://danbao.alipay.com/vtao/escrow/index.htm" target="_blank" seed="Nav-personal-escore-gathering">担保收款</a></td>
+							<td><a href="https://shenghuo.alipay.com/guhua.htm?_ad=c&_adType=lifejf_guhua_alipaysytop" target="_blank" seed="Nav-personal-guhua">固话宽带</a></td>
+							<td><a href="http://sale.etao.com/" target="_blank" seed="Nav-etao-sale">促销活动</a></td>
+							<td class="last"><a href="https://lab.alipay.com/fund/paydirect/index.htm" target="_blank" seed="Nav-accout-paydirect">支付方式管理</a></td>
+						</tr>
+						<tr>
+							<td><a href="https://danbao.alipay.com/vtao/escrow/index.htm" target="_blank" seed="Nav-personal-escore-pay">担保付款</a></td>
+							<td><a href="https://shenghuo.alipay.com/credit.htm?_ad=c&_adType=lifehk_syxl_in" target="_blank" seed="Nav-personal-credit">信用卡还款</a></td>
+							<td><a href="http://haiwai.etao.com/" target="_blank" seed="Nav-etao-haiwai">海淘</a></td>
+							<td class="last"><a href="https://huiyuan.alipay.com/benefits/i.htm" target="_blank" seed="Nav-vip">会员专享</a></td>
+						</tr>
+						<tr>
+							<td><a href="https://shenghuo.alipay.com/peerpay/peerPayConsumer.htm" seed="Nav-personal-aacollect" target="_blank">找人代付</a></td>
+							<td><a href="https://shenghuo.alipay.com/perloan.htm?_ad=c&_adType=lifeloan_syxl_in" target="_blank" seed="Nav-personal-perloan">还贷款</a></td>
+							<td><a href="http://www.etao.com/?tb_lm_id=a_grfw" target="_blank" seed="Nav-etao">一淘比价</a></td>
+							<td class="last"><a href="https://jf.alipay.com/prod/index.htm" seed="" target="_blank">集分宝</a></td>
+						</tr>
+						<tr>
+							<td><a href="https://shenghuo.alipay.com/groupay/index.htm?agent=index_lf_we" seed="Nav-personal-we" target="_blank">团体收款</a></td>
+							<td><a href="https://shenghuo.alipay.com/index.htm?_ad=c&_adType=lifept_index_in" target="_blank" seed="Nav-personal-more">更多...</a></td>
+							<td></td>
+							<td class="last"></td>
+						</tr>
+					</tbody>
+				</table>
+					</li> <!-- #个人服务 -->
+		<li class="ui-nav-item ">
+			<a href="https://b.alipay.com/newIndex.htm" class="ui-nav-item-link" >商家服务</a>
+							<table class="ui-nav-item-table">
+					<thead>
+						<tr>
+							<th>产品商店</th>
+							<th>技术支持</th>
+							<th>增值服务</th>
+							<th class="last">我的商家服务</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><a href="https://b.alipay.com/order/productDetail.htm?productId=2011060800327556" seed="Nav-bussiness-escore">担保交易</a></td>
+							<td><a href="https://b.alipay.com/order/selfIntegration.htm" seed="Nav-bussiness-self" target="_blank" >商户自助集成</a></td>
+							<td><a href="http://wow.alipay.com/enterprise/index.htm?style=new" seed="Nav-bussiness-activity" target="_blank" >商家活动</a></td>
+							<td class="last"><a href="https://b.alipay.com/order/myOrder.htm" seed="Nav-bussiness-myorder" target="_blank" >我的订单</a></td>
+						</tr>
+						<tr>
+							<td><a href="https://b.alipay.com/order/productDetail.htm?productId=2012051600355662" seed="Nav-bussiness-immediately">即时到账</a></td>
+							<td><a href="https://b.alipay.com/order/helperApply.htm?action=helperApply" seed="Nav-bussiness-assit" target="_blank" >支付宝协助集成</a></td>
+							<td><a href="https://shanghu.alipay.com/mservice/marketing/index.htm" seed="Nav-bussiness-tool" target="_blank" >营销工具</a></td>
+							<td class="last"><a href="https://b.alipay.com/order/myProduct.htm" seed="Nav-bussiness-myproduct" target="_blank" >我的产品</a></td>
+						</tr>
+						<tr>
+							<td><a href="https://b.alipay.com/order/productDetail.htm?productId=2011042200323155" seed="Nav-bussiness-kuai">快捷登录</a></td>
+							<td><a href="https://b.alipay.com/order/supportApply.htm?action=supportApply" seed="Nav-bussiness-report" target="_blank">故障申报</a></td>
+							<td><a href="https://b.alipay.com/order/productSet.htm?prodAr=5" seed="Nav-bussiness-third" target="_blank">第三方服务</a></td>
+							<td class="last"><a href="https://b.alipay.com/order/myTechServiceRecoeds.htm"  seed="Nav-bussiness-record" target="_blank">技术服务记录</a></td>
+						</tr>
+						<tr>
+							<td><a href="$actServer.getURI('/shopping/tuan/tuangou.html?src=jishi00')" target="_blank" seed="Nav-bussiness-group">团购收款</a></td>
+							<td></td>
+							<td></td>
+							<td class="last"><a href="http://wow.alipay.com/enterprise/my_campaign.htm?style=new" seed="Nav-bussiness-mycampaign" target="_blank">我参加的活动</a></td>
+						</tr>
+						<tr>
+							<td><a href="https://b.alipay.com/order/productSet.htm" seed="Nav-bussiness-more">更多...</a></td>
+							<td></td>
+							<td></td>
+							<td class="last"></td>
+						</tr>
+					</tbody>
+				</table>
+					</li> <!-- #商家服务 -->
+
+		<li class="ui-nav-item ui-nav-item-current">
+			<a href="http://home.alipay.com/bank/paymentKJ.htm" class="ui-nav-item-link" seed="Nav-bank">付款方式</a>
+							<ul class="ui-listnav fn-clear">
+					<li class="ui-listnav-item sl-rc-wrap ui-listnav-item-current">
+						<section class="sl-rc-cnt"><a seed="Nav-bank-payguide" href="http://home.alipay.com/bank/paymentKJ.htm" class="ui-listnav-item-link">付款方式介绍</a></section>
+					</li>
+					<li class="ui-listnav-item sl-rc-wrap ">
+						<section class="sl-rc-cnt"><a seed="Nav-bank-cooperation" href="http://home.alipay.com/bank/partner.htm" class="ui-listnav-item-link">合作伙伴</a></section>
+					</li>
+				</ul>
+					</li> <!-- #银行合作 -->
+
+		<li class="ui-nav-item ">
+			<a seed="Nav-mobile" href="http://mobile.alipay.com" class="ui-nav-item-link" >无线支付</a>
+							<table class="ui-nav-item-table">
+					<thead>
+						<tr>
+							<th>产品介绍</th>
+							<th>功能介绍</th>
+							<th>活动专区</th>
+							<th class="last">下载中心</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><a seed="Nav-mobile-howclient" href="http://mobile.alipay.com/main/introduce.htm?action=mobileclient">支付宝手机客户端</a></td>
+							<td><a seed="Nav-mobile-reg" href="http://mobile.alipay.com/main/functionIntro.htm?action=signUp">手机注册</a></td>
+							<td><a href="http://mobile.alipay.com/main/activity.htm">活动专区</a></td>
+							<td class="last"><a seed="Nav-mobile-dlclient" href="http://mobile.alipay.com/main/download.htm?action=mobileClient">支付宝手机客户端</a></td>
+						</tr>
+						<tr>
+							<td><a seed="Nav-mobile-howservice" href="http://mobile.alipay.com/main/introduce.htm?action=mobilesp">安全支付服务</a></td>
+							<td><a seed="Nav-mobile-shop" href="http://mobile.alipay.com/main/functionIntro.htm?action=dealPay">交易付款</a></td>
+							<td></td>
+							<td class="last"><a seed="Nav-mobile-padclient" href="http://mobile.alipay.com/main/download.htm?action=pad">支付宝Pad客户端</a></td>
+						</tr>
+						<tr>
+							<td><a seed="Nav-mobile-web" href="http://mobile.alipay.com/main/introduce.htm?action=wap">手机支付宝</a></td>
+							<td><a href="http://mobile.alipay.com/main/functionIntro.htm?action=lifeGathering">我要收款</a></td>
+							<td></td>
+							<td class="last"><a seed="Nav-mobile-howcalls" href="http://mobile.alipay.com/main/download.htm?action=mobileRecharge">手机充值站</a></td>
+
+						</tr>
+						<tr>
+							<td><a href="http://mobile.alipay.com/main/introduce.htm?action=barcode">条码支付</a></td>
+							<td><a href="http://mobile.alipay.com/main/functionIntro.htm?action=lifePayment">我要付款</a></td>
+							<td></td>
+							<td class="last"><a seed="Nav-mobile-howcalls" target="_blank" href="http://mobile.alipay.com/main/download.htm?action=coop">合作应用下载</a></td>
+						</tr>
+						<tr>
+							<td><a href="http://mobile.alipay.com/main/introduce.htm?action=yxp">悦享拍</a></td>
+							<td><a seed="Nav-mobile-lottery" href="http://mobile.alipay.com/main/functionIntro.htm?action=lotterTicket">手机彩票</a></td>
+							<td></td>
+							<td class="last"><a seed="Nav-mobile-TB" target="_blank" href="http://msoft.taobao.com/">手机淘宝客户端</a></td>
+						</tr>
+						<tr>
+							<td><a seed="Nav-mobile-more1" href="http://mobile.alipay.com/main/introduce.htm">更多...</a></td>
+							<td><a seed="Nav-mobile-calls" href="http://mobile.alipay.com/main/functionIntro.htm?action=callPay">话费充值</a></td>
+							<td></td>
+							<td class="last"></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td><a seed="Nav-mobile-more2" href="http://mobile.alipay.com/main/functionIntro.htm">更多...</a></td>
+							<td></td>
+							<td class="last"></td>
+						</tr>
+					</tbody>
+				</table>
+					</li> <!-- #手机支付 -->
+
+		<li class="ui-nav-item ">
+			<a seed="Nav-sc" href="https://securitycenter.alipay.com/sc/index.htm" class="ui-nav-item-link" >安全中心</a>
+							<table class="ui-nav-item-table">
+					<thead>
+						<tr>
+							<th>安全管家</th>
+							<th>安全产品</th>
+							<th>安全联盟</th>
+							<th class="last">安全学堂</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><a seed="Nav-sc-index" href="https://securitycenter.alipay.com/sc/index.htm">安全管家</a></td>
+							<td><a seed="Nav-sc-cert" href="https://securitycenter.alipay.com/cert/intro.htm">数字证书</a></td>
+							<td><a seed="Nav-sc-partner-browser" href="https://securitycenter.alipay.com/sc/partner/browser.htm">浏览器厂商</a></td>
+							<td class="last"><a seed="Nav-sc-study-account-security" href="https://securitycenter.alipay.com/sc/study/accountSecurity.htm">账户资金安全</a></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td><a seed="Nav-sc-otp-mobile" href="https://securitycenter.alipay.com/otp/mobile/intro.htm">手机宝令</a></td>
+							<td><a seed="Nav-sc-partner-anti-virus" href="https://securitycenter.alipay.com/sc/partner/antiVirus.htm">杀毒厂商</a></td>
+							<td class="last"><a seed="Nav-sc-study-transaction-security" href="https://securitycenter.alipay.com/sc/study/transactionSecurity.htm">网络交易安全</a></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td><a seed="Nav-sc-mobile" href="https://securitycenter.alipay.com/sc/mobile/intro.htm">手机动态口令</a></td>
+							<td><a seed="Nav-sc-partner-other" href="https://securitycenter.alipay.com/sc/partner/other.htm">其他合作</a></td>
+							<td class="last"><a seed="Nav-sc-study-experience" href="https://securitycenter.alipay.com/sc/study/experience.htm">防骗案例</a></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td><a seed="Nav-sc-ukey" href="https://securitycenter.alipay.com/ukey/intro.htm">支付盾</a></td>
+							<td></td>
+							<td class="last"><a seed="Nav-sc-study-teach" href="https://securitycenter.alipay.com/sc/study/teach.htm">新人专区</a></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td><a seed="Nav-sc-cert-third" href="https://securitycenter.alipay.com/cert/third/intro.htm">第三方证书</a></td>
+							<td></td>
+							<td class="last"></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td><a seed="Nav-sc-otp" href="https://securitycenter.alipay.com/otp/intro.htm">宝令</a></td>
+							<td></td>
+							<td class="last"></td>
+						</tr>
+					</tbody>
+				</table>
+					</li> <!-- #安全中心 -->
+	</ul> <!-- #nav-list -->
+</nav>
+
+<div id="container">
+	<div id="content">
+		<div class="ui-title fn-clear new-title">
+			<h2>快捷支付（含卡通）</h2>
+		</div>
+		<img alt="快捷支付" src="https://i.alipayobjects.com/e/201209/1Jmhc7rXDx.png"/>
+		<div class="new-wrap">
+			<div class="ui-title">
+				<h2>什么是快捷支付？ </h2>
+				<a href="http://abc.alipay.com/video/index.htm#paymentABCjjkkj" class="new-icon new-icon-view-video" target="_blank" seed="checkVideo">查看视频了解更多信息</a>
+			</div>
+			<div class="new-service-content">
+				<p>最安全、轻松的付款方式!</p>
+				<p class="new-service-content ft-gray">无需网银，只需关联您的信用卡或者借记卡，每次付款时只需输入支付宝支付密码即可完成付款。</p>
+				<ul class="ui-list ui-list-square ft-gray">
+					<li class="ui-list-item">安全：3大安全体系设计，让您安心购物</li>
+					<li class="ui-list-item">便捷：3步在线支付流程，让您轻松购物</li>
+					<li class="ui-list-item">保障：72小时完成赔付，让您放心购物</li>
+				</ul>
+			</div>
+			<a class="ui-btn ui-btn-ok" href="http://kuai.alipay.com/express/sign.htm?pdType=ajcabgdedcbiaihcgead" target="_blank"><span class="ui-btn-text">立即申请</span></a>
+		</div>
+				<!-- CMS:开始:home/bank/kj_cm_banner.vm --><div class="new-wrap">
+<style type="text/css">
+      .cm-banner{ height:123px;background-image:url("https://img.alipay.com/sys/home/bank/KJ-banner-bg.png"); background-repeat:no-repeat;background-position:-10px 0;}
+      .cm-icon-list{ padding-top:40px; padding-left:15px; height:58px;}
+      .cm-icon-list li{float:left;  width:178px; text-align:center; text-align:left;}
+      .cm-icon-list a{ display:block; float:left; position:relative; padding-left:65px; height:58px;}
+      .cm-icon-list a:hover{ text-decoration:none;}
+      .cm-icon-list b{ display:block; color:#bd560d; line-height:24px;}
+      .cm-icon-list span{ color:#5a5a5a;}
+      .cm-icon-list em{ background-image:url("https://img.alipay.com/sys/katongweb/frame-banner-icon.png"); background-repeat:no-repeat; width:58px; height:58px; display:block; position:absolute; left:0px;}
+      .cm-icon-1{ background-position:0 0;}
+      .cm-icon-2{ background-position:-58px 0;}
+      .cm-icon-3{ background-position:-116px 0;}
+      .cm-icon-4{ background-position:-174px 0;}
+      .cm-tip{ text-align:center; padding-top:13px;}
+      </style>
+      <div class="cm-banner">
+          <ol class="cm-icon-list">
+            <li><a href="http://hi.alipay.com/cms/zphd0517/index.html?_ad=fd&_adType=quanyi1_kuaijiekaitong1" target="_blank"><em class="cm-icon-1"></em><b>抽奖天天有</b><span>即抽即兑,惊喜不延迟</span></a></li>
+            <li><a href="http://kuai.alipay.com/?_ad=fd&_adType=quanyi3_kuaijiekaitong1" target="_blank"><em class="cm-icon-4"></em><b>1元秒到手</b><span>明星商品1元秒杀</span></a></li>
+            <li><a href="http://kuai.alipay.com/quan/?_ad=fd&_adType=quanyi3_kuaijiekaitong1" target="_blank"><em class="cm-icon-3"></em><b>礼券免费领</b><span>淘宝商城抵价券免费领</span></a></li>
+            <li><a href="http://kuai.alipay.com/?_ad=fd&_adType=quanyi2_kuaijiekaitong1" target="_blank"><em class="cm-icon-2"></em><b>特惠享不够</b><span>47万商品全年5折起</span></a></li>
+          </ol>
+        <div class="cm-tip">更多尊享尽在：<a href="http://kuai.alipay.com" target="_blank">kuai.alipay.com</a></div>
+      </div>
+      
+</div><!-- CMS:结束:home/bank/kj_cm_banner.vm -->		<div class="new-flow new-wrap">
+			<h3>付款流程<span class="fn-pl20"><a href="http://help.alipay.com/lab/help_detail.htm?help_id=245345" target="_blank">了解快捷支付限额</a></span></h3>
+			<img src="https://img.alipay.com/sys/home/flow/paymentKJ.png" alt="流程演示"/>
+			<a href="http://abc.alipay.com/show-how/kuaijie.htm#s1-1" class="new-icon new-icon-view-flow" target="_blank" seed="checkflow">查看流程演示</a>
+		</div>
+		<div class="new-wrap">
+			<h3>合作银行<span class="fn-pl20">点击银行查看详情</span></h3>
+			<h4>信用卡</h4>
+			<ul class="ui-list-icons fn-clear cashier-bank">
+							<!-- CMS:快捷支付[信用卡]银行列表开始:home/bank/express_list_credit.vm --><li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=CMB&cexpress=true' for="a-CMB">
+    <span class="icon CMB" title="招商银行" seed="a-CMB">招商银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=ICBC&cexpress=true' for="a-ICBC">
+    <span class="icon ICBC" title="工商银行" seed="a-ICBC">工商银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=BOC&cexpress=true' for="a-BOC">
+    <span class="icon BOC" title="中国银行" seed="a-BOC">中国银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=CCB&cexpress=true' for="a-CCB">
+    <span class="icon CCB" title="建设银行" seed="a-CCB">建设银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=CMBC&cexpress=true' for="a-CMBC">
+    <span class="icon CMBC" title="民生银行" seed="a-CMBC">民生银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=ABC&cexpress=true' for="a-ABC">
+    <span class="icon ABC" title="农业银行" seed="a-ABC">农业银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=SPABANK&cexpress=true' for="a-SPABANK">
+    <span class="icon SPABANK" title="平安银行" seed="a-SPABANK">平安银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=CIB&cexpress=true' for="a-CIB">
+    <span class="icon CIB" title="兴业银行" seed="a-CIB">兴业银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=CEB&cexpress=true' for="a-CEB">
+    <span class="icon CEB" title="光大银行" seed="a-CEB">光大银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=NXBANK&cexpress=true' for="a-NXBANK">
+    <span class="icon NXBANK" title="宁夏银行" seed="a-NXBANK">宁夏银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=BJBANK&cexpress=true' for="a-BJBANK">
+    <span class="icon BJBANK" title="北京银行" seed="a-BJBANK">北京银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=SHRCB&cexpress=true' for="a-SHRCB">
+    <span class="icon SHRCB" title="上海农商行" seed="a-SHRCB">上海农商行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=TCCB&cexpress=true' for="a-TCCB">
+    <span class="icon TCCB" title="天津银行" seed="a-TCCB">天津银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=GDB&cexpress=true' for="a-GDB">
+    <span class="icon GDB" title="广东发展银行" seed="a-GDB">广东发展银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=JSBANK&cexpress=true' for="a-JSBANK">
+    <span class="icon JSBANK" title="江苏银行" seed="a-JSBANK">江苏银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=DLB&cexpress=true' for="a-DLB">
+    <span class="icon DLB" title="大连银行" seed="a-DLB">大连银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=BHB&cexpress=true' for="a-BHB">
+    <span class="icon BHB" title="河北银行" seed="a-BHB">河北银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=HZCB&cexpress=true' for="a-HZCB">
+    <span class="icon HZCB" title="杭州银行" seed="a-HZCB">杭州银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=NBBANK&cexpress=true' for="a-NBBANK">
+    <span class="icon NBBANK" title="宁波银行" seed="a-NBBANK">宁波银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=BOD&cexpress=true' for="a-BOD">
+    <span class="icon BOD" title="东莞银行" seed="a-BOD">东莞银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=NJCB&cexpress=true' for="a-NJCB">
+    <span class="icon NJCB" title="南京银行" seed="a-NJCB">南京银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=HSBANK&cexpress=true' for="a-HSBANK">
+    <span class="icon HSBANK" title="徽商银行" seed="a-HSBANK">徽商银行</span>
+  </a>
+</li>
+<!-- CMS:快捷支付[信用卡]银行列表结束:home/bank/express_list_credit.vm -->
+			</ul>
+		<div id="bank-Cnt">
+			<h4>储蓄卡</h4>
+			<ul class="ui-list-icons fn-clear cashier-bank">
+									<!-- CMS:快捷支付[储蓄卡]优先显示开始:home/bank/express_list_debit_p.vm --><li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=ICBC&dexpress=true' for="a-ICBC">
+    <span class="icon ICBC" title="工商银行" seed="a-ICBC">工商银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=CCB&dexpress=true' for="a-CCB">
+    <span class="icon CCB" title="建设银行" seed="a-CCB">建设银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=ABC&dexpress=true' for="a-ABC">
+    <span class="icon ABC" title="农业银行" seed="a-ABC">农业银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=BOC&dexpress=true' for="a-BOC">
+    <span class="icon BOC" title="中国银行" seed="a-BOC">中国银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=CMB&dexpress=true' for="a-CMB">
+    <span class="icon CMB" title="招商银行" seed="a-CMB">招商银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=BJBANK&dexpress=true' for="a-BJBANK">
+    <span class="icon BJBANK" title="北京银行" seed="a-BJBANK">北京银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=PSBC&dexpress=true' for="a-PSBC">
+    <span class="icon PSBC" title="邮政储蓄" seed="a-PSBC">邮政储蓄</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=COMM&dexpress=true' for="a-COMM">
+    <span class="icon COMM" title="交通银行" seed="a-COMM">交通银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=CIB&dexpress=true' for="a-CIB">
+    <span class="icon CIB" title="兴业银行" seed="a-CIB">兴业银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=HXBANK&dexpress=true' for="a-HXBANK">
+    <span class="icon HXBANK" title="华夏银行" seed="a-HXBANK">华夏银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=CITIC&dexpress=true' for="a-CITIC">
+    <span class="icon CITIC" title="中信银行" seed="a-CITIC">中信银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=CEB&dexpress=true' for="a-CEB">
+    <span class="icon CEB" title="光大银行" seed="a-CEB">光大银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=GDB&dexpress=true' for="a-GDB">
+    <span class="icon GDB" title="广东发展银行" seed="a-GDB">广东发展银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=SPABANK&dexpress=true' for="a-SPABANK">
+    <span class="icon SPABANK" title="平安银行" seed="a-SPABANK">平安银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=CMBC&dexpress=true' for="a-CMBC">
+    <span class="icon CMBC" title="民生银行" seed="a-CMBC">民生银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=HKBEA&dexpress=true' for="a-HKBEA">
+    <span class="icon HKBEA" title="东亚银行" seed="a-HKBEA">东亚银行</span>
+  </a>
+</li>
+<!-- CMS:快捷支付[储蓄卡]优先显示结束:home/bank/express_list_debit_p.vm -->	
+			</ul>
+			<div class="bank-ist-btn">
+				<a id="more-link" href="javascript:void(0)" class="ui-arrow ui-arrow-down">查看更多区域性银行<span></span></a>
+			</div>
+			<ul class="ui-list-icons fn-clear cashier-bank">
+									<!-- CMS:快捷支付[储蓄卡]银行列表开始:home/bank/express_list_debit.vm --><li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=EGBANK&dexpress=true' for="a-EGBANK">
+    <span class="icon EGBANK" title="恒丰银行" seed="a-EGBANK">恒丰银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=LSBANK&dexpress=true' for="a-LSBANK">
+    <span class="icon LSBANK" title="莱商银行" seed="a-LSBANK">莱商银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=DAQINGB&dexpress=true' for="a-DAQINGB">
+    <span class="icon DAQINGB" title="龙江银行" seed="a-DAQINGB">龙江银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=ZGCCB&dexpress=true' for="a-ZGCCB">
+    <span class="icon ZGCCB" title="自贡市商业银行" seed="a-ZGCCB">自贡市商业银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=DYCB&dexpress=true' for="a-DYCB">
+    <span class="icon DYCB" title="德阳商业银行" seed="a-DYCB">德阳商业银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=SXCB&dexpress=true' for="a-SXCB">
+    <span class="icon SXCB" title="绍兴银行" seed="a-SXCB">绍兴银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=BJRCB&dexpress=true' for="a-BJRCB">
+    <span class="icon BJRCB" title="北京农村商业银行" seed="a-BJRCB">北京农村商业银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=BOHAIB&dexpress=true' for="a-BOHAIB">
+    <span class="icon BOHAIB" title="渤海银行" seed="a-BOHAIB">渤海银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=GYCB&dexpress=true' for="a-GYCB">
+    <span class="icon GYCB" title="贵阳市商业银行" seed="a-GYCB">贵阳市商业银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=MTBANK&dexpress=true' for="a-MTBANK">
+    <span class="icon MTBANK" title="浙江民泰商业银行" seed="a-MTBANK">浙江民泰商业银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=YCCB&dexpress=true' for="a-YCCB">
+    <span class="icon YCCB" title="宜昌市商业银行" seed="a-YCCB">宜昌市商业银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=URMQCCB&dexpress=true' for="a-URMQCCB">
+    <span class="icon URMQCCB" title="乌鲁木齐市商业银行" seed="a-URMQCCB">乌鲁木齐市商业银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=CZRCB&dexpress=true' for="a-CZRCB">
+    <span class="icon CZRCB" title="常州农村信用联社" seed="a-CZRCB">常州农村信用联社</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=HRXJB&dexpress=true' for="a-HRXJB">
+    <span class="icon HRXJB" title="华融湘江银行" seed="a-HRXJB">华融湘江银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=SDEB&dexpress=true' for="a-SDEB">
+    <span class="icon SDEB" title="顺德农商银行" seed="a-SDEB">顺德农商银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=LYCB&dexpress=true' for="a-LYCB">
+    <span class="icon LYCB" title="辽阳市商业银行" seed="a-LYCB">辽阳市商业银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=NHB&dexpress=true' for="a-NHB">
+    <span class="icon NHB" title="南海农村信用联社" seed="a-NHB">南海农村信用联社</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=JINCHB&dexpress=true' for="a-JINCHB">
+    <span class="icon JINCHB" title="晋城市商业银行" seed="a-JINCHB">晋城市商业银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=TRCB&dexpress=true' for="a-TRCB">
+    <span class="icon TRCB" title="天津农商银行" seed="a-TRCB">天津农商银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=SRBANK&dexpress=true' for="a-SRBANK">
+    <span class="icon SRBANK" title="上饶银行" seed="a-SRBANK">上饶银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=GLBANK&dexpress=true' for="a-GLBANK">
+    <span class="icon GLBANK" title="桂林银行" seed="a-GLBANK">桂林银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=ZRCBANK&dexpress=true' for="a-ZRCBANK">
+    <span class="icon ZRCBANK" title="张家港农村商业银行" seed="a-ZRCBANK">张家港农村商业银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=ZBCB&dexpress=true' for="a-ZBCB">
+    <span class="icon ZBCB" title="齐商银行" seed="a-ZBCB">齐商银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=DRCBCL&dexpress=true' for="a-DRCBCL">
+    <span class="icon DRCBCL" title="东莞农村商业银行" seed="a-DRCBCL">东莞农村商业银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=GDRCC&dexpress=true' for="a-GDRCC">
+    <span class="icon GDRCC" title="广东省农村信用社联合社" seed="a-GDRCC">广东省农村信用社联合社</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=WZCB&dexpress=true' for="a-WZCB">
+    <span class="icon WZCB" title="温州银行" seed="a-WZCB">温州银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=QDCCB&dexpress=true' for="a-QDCCB">
+    <span class="icon QDCCB" title="青岛银行" seed="a-QDCCB">青岛银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=BJBANK&dexpress=true' for="a-BJBANK">
+    <span class="icon BJBANK" title="北京银行" seed="a-BJBANK">北京银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=CZCB&dexpress=true' for="a-CZCB">
+    <span class="icon CZCB" title="稠州商业银行" seed="a-CZCB">稠州商业银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=H3CB&dexpress=true' for="a-H3CB">
+    <span class="icon H3CB" title="内蒙古银行" seed="a-H3CB">内蒙古银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=SHRCB&dexpress=true' for="a-SHRCB">
+    <span class="icon SHRCB" title="上海农村商业银行" seed="a-SHRCB">上海农村商业银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=JSRCU&dexpress=true' for="a-JSRCU">
+    <span class="icon JSRCU" title="江苏省农村信用联合社" seed="a-JSRCU">江苏省农村信用联合社</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=ZYCBANK&dexpress=true' for="a-ZYCBANK">
+    <span class="icon ZYCBANK" title="遵义市商业银行" seed="a-ZYCBANK">遵义市商业银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=JSBANK&dexpress=true' for="a-JSBANK">
+    <span class="icon JSBANK" title="江苏银行" seed="a-JSBANK">江苏银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=ASCB&dexpress=true' for="a-ASCB">
+    <span class="icon ASCB" title="鞍山银行" seed="a-ASCB">鞍山银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=TZCB&dexpress=true' for="a-TZCB">
+    <span class="icon TZCB" title="台州市商业银行" seed="a-TZCB">台州市商业银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=FDB&dexpress=true' for="a-FDB">
+    <span class="icon FDB" title="富滇银行" seed="a-FDB">富滇银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=JZBANK&dexpress=true' for="a-JZBANK">
+    <span class="icon JZBANK" title="晋中市商业银行" seed="a-JZBANK">晋中市商业银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=JXBANK&dexpress=true' for="a-JXBANK">
+    <span class="icon JXBANK" title="嘉兴银行" seed="a-JXBANK">嘉兴银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=CSRCB&dexpress=true' for="a-CSRCB">
+    <span class="icon CSRCB" title="常熟农村商业银行" seed="a-CSRCB">常熟农村商业银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=BOSZ&dexpress=true' for="a-BOSZ">
+    <span class="icon BOSZ" title="苏州银行" seed="a-BOSZ">苏州银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=LANGFB&dexpress=true' for="a-LANGFB">
+    <span class="icon LANGFB" title="廊坊银行" seed="a-LANGFB">廊坊银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=ZJTLCB&dexpress=true' for="a-ZJTLCB">
+    <span class="icon ZJTLCB" title="浙江泰隆商业银行" seed="a-ZJTLCB">浙江泰隆商业银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=YNRCC&dexpress=true' for="a-YNRCC">
+    <span class="icon YNRCC" title="云南省农村信用社" seed="a-YNRCC">云南省农村信用社</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=HKB&dexpress=true' for="a-HKB">
+    <span class="icon HKB" title="汉口银行" seed="a-HKB">汉口银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=ZJNX&dexpress=true' for="a-ZJNX">
+    <span class="icon ZJNX" title="浙江省农村信用社联合社" seed="a-ZJNX">浙江省农村信用社联合社</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=ZGCCB&dexpress=true' for="a-ZGCCB">
+    <span class="icon ZGCCB" title="自贡市商业银行" seed="a-ZGCCB">自贡市商业银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=DYCCB&dexpress=true' for="a-DYCCB">
+    <span class="icon DYCCB" title="东营市商业银行" seed="a-DYCCB">东营市商业银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=HZCCB&dexpress=true' for="a-HZCCB">
+    <span class="icon HZCCB" title="湖州市商业银行" seed="a-HZCCB">湖州市商业银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=WJRCB&dexpress=true' for="a-WJRCB">
+    <span class="icon WJRCB" title="吴江农村商业银行" seed="a-WJRCB">吴江农村商业银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=CDRCB&dexpress=true' for="a-CDRCB">
+    <span class="icon CDRCB" title="成都农商银行" seed="a-CDRCB">成都农商银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=GCB&dexpress=true' for="a-GCB">
+    <span class="icon GCB" title="广州银行" seed="a-GCB">广州银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=NBBANK&dexpress=true' for="a-NBBANK">
+    <span class="icon NBBANK" title="宁波银行" seed="a-NBBANK">宁波银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=CZBANK&dexpress=true' for="a-CZBANK">
+    <span class="icon CZBANK" title="浙商银行" seed="a-CZBANK">浙商银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=NJCB&dexpress=true' for="a-NJCB">
+    <span class="icon NJCB" title="南京银行" seed="a-NJCB">南京银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=CSCB&dexpress=true' for="a-CSCB">
+    <span class="icon CSCB" title="长沙银行" seed="a-CSCB">长沙银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=CRCBANK&dexpress=true' for="a-CRCBANK">
+    <span class="icon CRCBANK" title="重庆银行" seed="a-CRCBANK">重庆银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=HSBANK&dexpress=true' for="a-HSBANK">
+    <span class="icon HSBANK" title="徽商银行" seed="a-HSBANK">徽商银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=HZCB&dexpress=true' for="a-HZCB">
+    <span class="icon HZCB" title="杭州银行" seed="a-HZCB">杭州银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=SHRCB&dexpress=true' for="a-SHRCB">
+    <span class="icon SHRCB" title="上海银行" seed="a-SHRCB">上海银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=NCB&dexpress=true' for="a-NCB">
+    <span class="icon NCB" title="南昌银行" seed="a-NCB">南昌银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=CDRCB&dexpress=true' for="a-CDRCB">
+    <span class="icon CDRCB" title="成都银行" seed="a-CDRCB">成都银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=FJHXBC&dexpress=true' for="a-FJHXBC">
+    <span class="icon FJHXBC" title="福建海峡银行" seed="a-FJHXBC">福建海峡银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=DLB&dexpress=true' for="a-DLB">
+    <span class="icon DLB" title="大连银行" seed="a-DLB">大连银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=CRCBANK&dexpress=true' for="a-CRCBANK">
+    <span class="icon CRCBANK" title="重庆农村商业银行" seed="a-CRCBANK">重庆农村商业银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=BOD&dexpress=true' for="a-BOD">
+    <span class="icon BOD" title="东莞银行" seed="a-BOD">东莞银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=JLBANK&dexpress=true' for="a-JLBANK">
+    <span class="icon JLBANK" title="吉林银行" seed="a-JLBANK">吉林银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=NXBANK&dexpress=true' for="a-NXBANK">
+    <span class="icon NXBANK" title="宁夏银行" seed="a-NXBANK">宁夏银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=KLB&dexpress=true' for="a-KLB">
+    <span class="icon KLB" title="昆仑银行" seed="a-KLB">昆仑银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=ORBANK&dexpress=true' for="a-ORBANK">
+    <span class="icon ORBANK" title="鄂尔多斯银行" seed="a-ORBANK">鄂尔多斯银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=XTB&dexpress=true' for="a-XTB">
+    <span class="icon XTB" title="邢台银行" seed="a-XTB">邢台银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=JSB&dexpress=true' for="a-JSB">
+    <span class="icon JSB" title="晋商银行" seed="a-JSB">晋商银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=BOYK&dexpress=true' for="a-BOYK">
+    <span class="icon BOYK" title="营口银行" seed="a-BOYK">营口银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=TCRCB&dexpress=true' for="a-TCRCB">
+    <span class="icon TCRCB" title="江苏太仓农村商业银行" seed="a-TCRCB">江苏太仓农村商业银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=BHB&dexpress=true' for="a-BHB">
+    <span class="icon BHB" title="河北银行" seed="a-BHB">河北银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=JLRCU&dexpress=true' for="a-JLRCU">
+    <span class="icon JLRCU" title="吉林省农村信用社" seed="a-JLRCU">吉林省农村信用社</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=JJBANK&dexpress=true' for="a-JJBANK">
+    <span class="icon JJBANK" title="九江银行" seed="a-JJBANK">九江银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=KORLABANK&dexpress=true' for="a-KORLABANK">
+    <span class="icon KORLABANK" title="库尔勒市商业银行" seed="a-KORLABANK">库尔勒市商业银行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=JZCB&dexpress=true' for="a-JZCB">
+    <span class="icon JZCB" title="湖北银行荆州分行" seed="a-JZCB">湖北银行荆州分行</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=SDRCU&dexpress=true' for="a-SDRCU">
+    <span class="icon SDRCU" title="山东省农村信用社联合社" seed="a-SDRCU">山东省农村信用社联合社</span>
+  </a>
+</li>
+<li>
+  <a class="icon-box" href='http://home.alipay.com/bank/paymentKJDetail.htm?id=XABANK&dexpress=true' for="a-XABANK">
+    <span class="icon XABANK" title="西安银行" seed="a-XABANK">西安银行</span>
+  </a>
+</li>
+<!-- CMS:快捷支付[储蓄卡]银行列表结束:home/bank/express_list_debit.vm -->	
+			</ul>
+		</div>
+		</div>
+	</div>
+	<div id="aside">
+		<div id="J-snav" class="ui-snav">
+			<ul class="ui-snav-cnt">
+				<li class="ui-snav-item current">
+					<a href="paymentKJ.htm" class="ui-snav-link selected" seed="paymentKJ-sideNav" >快捷支付（含卡通）</a>
+				</li>
+				<li class="ui-snav-item">
+					<a href="paymentOnlineBank.htm" class="ui-snav-link" seed="paymentOnlineBank-sideNav" >网上银行付款</a>
+				</li>
+				<li class="ui-snav-item">
+					<a href="paymentAccount.htm" class="ui-snav-link" seed="paymentAccount-sideNav" >支付宝余额付款</a>
+				</li>
+				
+				<li class="ui-snav-item">
+					<a href="paymentCreditInstallment.htm" class="ui-snav-link" seed="paymentCreditInstallment-sideNav" >信用卡分期付款</a>
+				</li>
+				<li class="ui-snav-item">
+					<a href="paymentAlipayCard.htm" class="ui-snav-link" seed="paymentAlipayCard-sideNav" >支付宝卡付款</a>
+				</li>
+				<li class="ui-snav-item">
+					<a href="paymentPayDelivery.htm" class="ui-snav-link" seed="paymentPayDelivery-sideNav" >货到付款</a>
+				</li>
+				<li class="ui-snav-item">
+					<a href="paymentStore.htm" class="ui-snav-link" seed="paymentStore-sideNav" >网点付款</a>
+				</li>
+				<li class="ui-snav-item">
+					<a href="paymentVoucher.htm" class="ui-snav-link" seed="paymentVoucher-sideNav" >消费卡付款</a>
+				</li>
+				<li class="ui-snav-item">
+					<a href="paymentPayOther.htm" class="ui-snav-link" seed="paymentPayOther-sideNav" >找人代付</a>
+				</li>
+				
+				<li class="ui-snav-item">
+					<a href="paymentInternational.htm" class="ui-snav-link" seed="paymentMobile-sideNav" >国际银行卡支付</a>
+				</li>
+			</ul>
+		</div> <!-- .ui-snav -->
+	</div> <!-- #aside -->
+	<style type="text/css" media="screen">
+	.ui-footer { clear: both; }
+	</style>
+		
+
+<!-- /component/footCommon.vm -->
+<style>
+.ui-footer {margin-top: 30px; border-top: 1px solid #cccccc; height: 100px; color:#808080;}
+.ui-footer .ui-separator{font-weight: normal;}
+.ui-footer-ctn {border-top: 1px solid #ffffff;padding-top: 15px;text-align: center;}
+.ui-footer-link a {padding: 0 3px 0 2px;}
+.ui-footer-copyright,.ui-footer-phone {padding-top: 10px;}
+.ui-footer-copyright a,.ui-footer-copyright a:hover {color:#808080;}
+.server{color:#fff;}
+</style>
+<div class="ui-footer fn-clear" coor="footer">
+    <div class="ui-footer-ctn">
+        <!-- CMS:支付宝全站/全站底部/底部链接开始:alipay/foot/links.vm --><div class="ui-footer-link">
+      <a href="http://ab.alipay.com/i/index.htm" target="_blank" seed="foot-1">关于支付宝</a>  
+           <em class="ui-separator">|</em>
+       <a seed="foot-4" href="http://blog.alipay.com/" title="官方博客" target="_blank">官方博客</a>
+           <em class="ui-separator">|</em>
+       <a seed="foot-5" href="http://job.alipay.com/index.php" title="诚征英才" target="_blank">诚征英才</a>
+           <em class="ui-separator">|</em>
+       <a seed="foot-6" href="http://ab.alipay.com/i/lianxi.htm" title="联系我们" target="_blank">联系我们</a>
+           <em class="ui-separator">|</em>
+       <a seed="foot-9" href="https://open.alipay.com/index.htm" title="开放平台" target="_blank">开放平台</a>
+           <em class="ui-separator">|</em>
+       <a seed="foot-7" href="http://global.alipay.com/" title="International Business" target="_blank">International Business</a>
+           <em class="ui-separator">|</em>
+       <a seed="foot-8" href="http://ab.alipay.com/i/jieshao.htm#en" title="About Alipay" target="_blank">About Alipay</a>
+      </div><!-- CMS:支付宝全站/全站底部/底部链接结束:alipay/foot/links.vm -->
+        <div class="ui-footer-copyright">
+            <!-- CMS:支付宝全站/全站底部/alipay_foot_copyright_vm开始:alipay/foot/copyright.vm --><style>
+.copyright,.copyright a,.copyright a:hover{color:#808080;}
+</style>
+<div class="copyright">
+  支付宝版权所有 2004-2013 
+  <a href="https://i.alipayobjects.com/e/201201/2PFHAJCn91.jpg" target="_blank">ICP证：浙B2-20100257</a>
+</div>
+<div class="server" id="ServerNum">
+  home-60-1 &nbsp; 
+</div><!-- CMS:支付宝全站/全站底部/alipay_foot_copyright_vm结束:alipay/foot/copyright.vm -->        </div>
+    </div>
+</div>
+<!-- /component/footCommon.vm -->
+</div>
+<script type="text/javascript" charset="utf-8">
+	araleConfig = {
+		combo_host: "https://a.alipayobjects.com",
+		combo_path: '/min/?b=javascript&f=',
+		css_combo_path: '/min/?b=al&f='
+	}
+</script>
+<script type="text/javascript" src="https://a.alipayobjects.com/javascript/arale_v1.0.js"></script>
+<script type="text/javascript">
+var arale_globalXbox, arale_reportXbox;
+if($$('.J-reportXbox')[0]){
+	Loader.use(['aralex.xbox'],function(){
+		arale_reportXbox =  new aralex.xbox.IframeXbox({
+			el: $$('.J-reportXbox'),
+			width: 550,
+			height: 550,
+			value: "http://home.alipay.com/security/reportXbox.htm",
+			beforeShow:function(){
+				arale_globalXbox = this;
+			}
+		});
+	});
+}
+
+(function () {
+
+	var rmClass = function (name, list) {
+		A(list).each(function (item) {
+			$(item).removeClass(name);
+		});
+	},
+
+	getHover = function (domNode, theClass) {
+
+		var hoverClass = theClass + '-hover';
+		nodeList = $$('.' + theClass, domNode);
+
+		E.delegate(domNode, 'mouseover', function (target) {
+			if (!$(target).hasClass(hoverClass)) {
+				rmClass(hoverClass, nodeList);
+				$(target).addClass(hoverClass);
+			}
+		}, '.' + theClass);
+
+		E.delegate(domNode, 'mouseout', function (target) {
+			$(target).removeClass(hoverClass);
+		}, '.' + theClass);
+	};
+
+	getHover($('nav-list'), 'ui-nav-item');
+	getHover($('nav-list'), 'ui-listnav-item');
+	getHover($('nav-list'), 'ui-sublistnav-item');
+})();
+</script>
+<script type="text/javascript" charset="utf-8">
+(function(){
+var Cashier ={
+	Cache:{
+		IconList:A([])
+		}
+	};
+arale.array.fn.combine= function(array) {
+	var arr = [],
+		that = this;
+	$A(array).each(function(item) {
+		arr = that.include(item);
+	});
+	return arr;
+};
+var autoBkIcon = function(context) {
+	var imageSrc = "https://apimg.alipay.com/combo.png?d=cashier",
+		base = '&t=',
+		height = 36,
+		iconPool = A([]),
+		cssPool = [];
+
+	context = context || document;
+	var items = $$('span.icon,a.icon', context);
+
+	if (!Cashier.Cache.IconList) {
+		Cashier.Cache.IconList = A([]);
+	}
+	var generateHeadCSS = function(icons,url) {
+		var text = 'text-indent: -9999px; ',
+			logo = icons.arr.join(', .'),
+			background = ['background-image: url("', url, '");'].join(''),
+			style = ['.', logo, ' {', text, background, '} '].join('');
+		cssPool.push(style);
+	};
+
+	var generateCSS = function(item,offset) {
+		var background = ['background-position: 0px -', offset, 'px; '].join(''),
+			style = ['.', item, ' {', background, '} '].join('');
+		cssPool.push(style);
+	};
+
+	var generateTag = function(cssRules) {
+		var tag = document.createElement('style'),
+			rules = document.createTextNode(cssRules);
+		tag.type = 'text/css';
+		tag.className = 'iconStyle';
+		if (tag.styleSheet) {
+			tag.styleSheet.cssText = rules.nodeValue;
+		} else {
+			tag.appendChild(rules);
+		}
+		document.getElementsByTagName('head')[0].appendChild(tag);
+	};
+
+	// 获取页面中所有银行的Class
+	var excludeClass = /icon|j-box/;
+	A(items).each(function(item,index) {
+		var icons = item.attr('class').split(' ');
+		if (icons.length > 1) {
+			// 潜规则一枚：请注意写css的时候需要将银行instId放到最后, 比如 class="j-xbox icon CMB"
+			var icon = icons.slice(-1)[0];
+			// 检查该图标是否已加载
+			if (icon && Cashier.Cache.IconList.indexOf(icon) === -1) {
+				iconPool.include(icon); //去重后插入数组
+			}
+		}
+	});
+	iconPool.arr.sort(); //排序以优化图片组合
+
+	if (iconPool.arr.length) {
+		// 合并去重
+		Cashier.Cache.IconList.combine(iconPool);
+
+		// 拼接图片URL
+		imageSrc = [imageSrc, base, iconPool.arr.join(',')].join('');
+
+		// 给所有银行logo生成样式
+		generateHeadCSS(iconPool, imageSrc);
+
+		// 给每个银行logo生成位置
+		iconPool.each(function(item,index) {
+			var offset = height * (index);
+			generateCSS(item, offset);
+		});
+
+		generateTag(cssPool.join('\n'));
+
+		// 保障可用性，若图片服务宕机则加载备用CSS
+		var comboImg = new Image();
+		E.connect(comboImg, 'onerror', function() {
+	var loadCssDomElement = function(href) {
+		var cssFile = document.createElement('link');
+		cssFile.setAttribute('rel', 'stylesheet');
+		cssFile.setAttribute('type', 'text/css');
+		cssFile.setAttribute('href', href);
+		document.getElementsByTagName('head')[0].appendChild(cssFile);
+	};
+			//清空生成的CSS Style
+			A($$('.iconStyle')).each(function(item, index) {
+				item.dispose();
+			});
+			// 加载备用 icon css。
+			loadCssDomElement(araleConfig.combo_host+araleConfig.css_combo_path+'alice.cashier.icon.css');
+		});
+		comboImg.src = imageSrc;
+	}
+};
+autoBkIcon();
+})();
+</script>
+<script type="text/javascript" charset="utf-8" src="https://a.alipayobjects.com/build/js/home/home.js?t=476f"></script>
+
+<script type="text/javascript">
+	E.domReady(function(){
+		var bankUl = $('bank-Cnt').nodes('ul')[1];
+		if(bankUl !== null){
+			$(bankUl).setStyle('height','0px');
+			
+			
+			$("more-link").click(function(){
+				if($(bankUl.node).getStyle("height") == "0px"){
+					var anim = new Animator({
+				    	duration:1000,
+				    	onComplete:function(){
+				        $("more-link").setHtml("收起更多区域性银行<span></span>").removeClass("ui-arrow-down").addClass("ui-arrow-up");
+				    	}
+					});
+					anim.addCSSMotion(bankUl.node, "height:"+((parseInt(bankUl.nodes('li').length/5,10)+1)*57)+"px;");
+					anim.play();
+					}
+				else{
+					var anim = new Animator({
+				    	duration:1000,
+				    	onComplete:function(){
+				        	$("more-link").setHtml("查看更多区域性银行<span></span>").removeClass("ui-arrow-up").addClass("ui-arrow-down");
+				    	}
+					});
+					anim.addCSSMotion(bankUl.node, "height:0px;");
+					anim.play();
+					}
+				
+			});
+			
+		}
+	});
+</script>
+
+
+
+ 
+<!-- CMS:支付宝全站/监控埋点/tracker js引用开始:alipay/tracker/tracker.vm -->
+
+<script type="text/javascript" charset="utf-8" src="https://a.alipayobjects.com/ar/??alipay.smartracker-1.5.js"></script>
+
+<script type="text/javascript">
+if(window.seajs){
+seajs.use("$", function($){
+  $(function(){
+    // 命中率：[0,1]: 实际对应采样率：[0%,100%]
+	// 注意：sens_rate 跟 sens_rate 是有关联的。
+	//      实际设置的内容时，应该参考以下算法：
+	//      敏感信息监控实际采样率 = sens_rate * jserr_rate;
+    var jserr_rate = 0.1;
+	var sens_rate = 0.1;
+
+    /**
+     * 随机采样命中算法。
+     * @param {Nuber} rate, 采样率，[0,1] 区间的数值。
+     * @return {Boolean}
+     */
+    function hit(rate){
+      return 0 === Math.floor(Math.random() / rate);
+    }
+	  
+    if(!hit(jserr_rate)){return;}
+	seajs.use("alipay/monitor/2.0.0/monitor", function(monitor){
+	  if(!monitor || !monitor.boot){return;}
+      monitor.boot(); // 启动监控。
+
+      if(!hit(sens_rate)){return;}
+      seajs.use("alipay/sensinfo/1.1.0/sensinfo", function(sensinfo){
+        if(!sensinfo){return;}
+        try{
+          var html = (document.body || document.documentElement).innerHTML;
+	      sensinfo.scan(html);
+        }catch(ex){}
+
+      });
+	});
+
+  });
+});
+}
+</script>
+
+
+
+<!-- CMS:支付宝全站/cmsbuffer/main开始:alipay/cmsbuffer/main.vm -->														
+	
+<!-- CMS:支付宝全站/cmsbuffer/main结束:alipay/cmsbuffer/main.vm --><!-- CMS:支付宝全站/监控埋点/tracker js引用结束:alipay/tracker/tracker.vm -->
+
+
+
+
+
+<!-- CMS:支付宝全站/全站底部/alipay_foot_onlineServiceNew_vm开始:alipay/foot/onlineServiceNew.vm -->
+
+
+
+                                                                                                                                                                                                                                                                            
+    <!-- CMS:支付宝全站/全站底部/在线客服新埋点区块开始:alipay/foot/cliveService.vm --><div style="display:none">onlineServer</div>
+<script type="text/javascript">
+try {
+    function loadOnlineServer() {
+        seajs.config({
+            comboExcludes: /\/u\/(js|css)\//,
+            alias: {
+                'onlineServerConfig': 'https://a.alipayobjects.com/u/js/201307/jAyRmnpyv.js',//老配置加载（服务端生成）
+                'portalServerConfig': 'https://a.alipayobjects.com/u/js/201307/mIWvqdGTl.js',//新配置加载（服务端生成）
+                'onlineServerJS': 'https://a.alipayobjects.com/u/js/201305/KZROBjq7L.js',//云客服窗口事件 精确，模糊，排除匹配URL
+                'onlineServerCSS': 'https://a.alipayobjects.com/u/css/201304/BYLrWZ40T.css'//云客服通用样式
+            }
+        });
+
+        seajs.use(['onlineServerConfig', 'portalServerConfig'], function(){
+            jQuery(function(){
+                window.OS = {},
+                OS = window.OS,
+                OS.server = {
+                    cliveServer: 'https://clive.alipay.com',
+                    cschannelServer: 'https://cschannel.alipay.com'
+                }
+                if (window.ONLINESERVERCONFIG) {
+                    OS.config = {
+                        //在线客服地址
+                        onlineServerURL: OS.server.cliveServer + '/csrouter.htm',
+                        //在线客服分流地址
+                        portalServerURL: OS.server.cschannelServer + '/csrouter.htm',
+                        //在线客服默认图片
+                        onlineServerIconDefault: 'https://i.alipayobjects.com/e/201304/9TkA5fb4f.png'
+                    };
+                    seajs.use('onlineServerCSS');
+                    seajs.use('onlineServerJS');
+                }
+            });
+        });
+    }
+    //window.onload
+    var bind = function(func){
+        w = window;
+        if (w.attachEvent) {
+            w.attachEvent('onload', func);
+        } else {
+            w.addEventListener('load', func, false);
+        }
+    };
+    //seajs载入
+    bind(function() {
+        w = window, o = 'seajs', d = document;
+        if(w[o]) { return loadOnlineServer() }
+        s = d.createElement("script")
+        s.id = o + "node"
+        s.charset = "utf-8";
+        s.type = "text/javascript";
+        s.src = "https://a.alipayobjects.com/??seajs/1.3.1/sea.js,jquery/jquery/1.7.2/jquery.js";
+        head = d.head || d.getElementsByTagName( "head" )[0] || d.documentElement;
+        head.appendChild(s);
+        s.onload = s.onreadystatechange = function(){ if (!s.readyState || /loaded|complete/.test(s.readyState)) { loadOnlineServer() } };
+    })
+} catch (ex) {
+	if(window.console&&window.console.log){
+		console.log(ex);
+	}
+}
+</script><!-- CMS:支付宝全站/全站底部/在线客服新埋点区块结束:alipay/foot/cliveService.vm --><!-- CMS:支付宝全站/全站底部/alipay_foot_onlineServiceNew_vm结束:alipay/foot/onlineServiceNew.vm -->
+<!-- CMS:支付宝全站/全站底部/在线客服流量控制开始:alipay/foot/onlineServiceCtr.vm -->
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <!-- CMS:支付宝全站/全站底部/在线客服流量控制结束:alipay/foot/onlineServiceCtr.vm -->
+</body>
+</html>
+		
