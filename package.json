@@ -1,7 +1,7 @@
 {
   "name": "gbk",
-  "version": "0.0.1",
-  "description": "a gbk <-> utf-8 conventer",
+  "version": "0.0.2",
+  "description": "convert gbk to utf-8 made easy",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
