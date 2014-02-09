@@ -11,10 +11,11 @@
     "url": "https://github.com/turingou/gbk.git"
   },
   "keywords": [
-    "gbk"
+    "gbk",
+    "utf-8"
   ],
   "author": "turingou",
-  "license": "BSD",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/turingou/gbk/issues"
   },
