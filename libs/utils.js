@@ -1,3 +1,5 @@
-exports.isFunction = function(func) {
-    return func && typeof(func) === 'function';
+exports.isFunction = isFunction
+
+function isFunction(func) {
+  return func && typeof(func) === 'function'
 }

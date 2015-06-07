@@ -1,6 +1,6 @@
 ## GBK ![npm](https://badge.fury.io/js/gbk.png)
 
-convert gbk to utf-8 made easy.
+Convert gbk to utf-8 made easy.
 
 ### Installation
 
@@ -10,7 +10,7 @@ $ npm install gbk
 
 ### Example
 
-high level methods: 
+High level methods: 
 
 ````javascript
 var gbk = require('gbk');
@@ -19,16 +19,16 @@ var gbk = require('gbk');
 gbk.fetch('http://abc.com/gbk.html').to('./demoGbk.html');
 
 // fetch a gbk-encoded html page and save it and do sth in the callback
-gbk.fetch('http://doabc.com/gbk.html').to('./demoGbk.html', fucntion(err, dist) {
-    if (!err) // do sth when it has been saved(gbk-encoded)
+gbk.fetch('http://doabc.com/gbk.html').to('./demoGbk.html', function(err, dist) {
+  if (!err) // do sth when it has been saved(gbk-encoded)
 });
 
 // fetch a gbk-encoded html page and get a utf-8 string
-gbk.fetch('http://abc.com/gbk.html').to('string', fucntion(err,string){
-    if (!err) // do sth width utf-8 encoded string
+gbk.fetch('http://abc.com/gbk.html').to('string', function(err,string){
+  if (!err) // do sth width utf-8 encoded string
 });
 ````
-low level methods: from gbkBuffer
+Low level methods: from gbkBuffer
 
 e.g: `request({url: 'xxx.gbk.html', encoding:null })` will callback with a buffer
 
@@ -41,8 +41,8 @@ var anotherGbkBuffer = gbk.toBuffer('gbk', utf8String);
 
 // save a buffer
 fs.writeFile('xxx.html',anotherGbkBuffer,function(err){
-    if (err) return throw err;
-    console.log('original gbk file saved!')
+  if (err) return throw err;
+  console.log('original gbk file saved!')
 });
 ````
 ### Run demo
