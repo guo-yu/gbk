@@ -1,4 +1,4 @@
 node_modules
 *.sublime*
 .DS_*
-demo/demo.html
+example/demo.html
