@@ -4,7 +4,7 @@ Convert gbk to utf-8 made easy.
 
 ### Installation
 
-```
+```bash
 $ npm install gbk
 ```
 
@@ -12,27 +12,35 @@ $ npm install gbk
 
 High level methods: 
 
-````javascript
+```javascript
 var gbk = require('gbk');
 
 // fetch a gbk-encoded html page and save it
-gbk.fetch('http://abc.com/gbk.html').to('./demoGbk.html');
+gbk
+  .fetch('http://abc.com/gbk.html')
+  .to('./demoGbk.html');
 
 // fetch a gbk-encoded html page and save it and do sth in the callback
-gbk.fetch('http://doabc.com/gbk.html').to('./demoGbk.html', function(err, dist) {
-  if (!err) // do sth when it has been saved(gbk-encoded)
+gbk
+  .fetch('http://doabc.com/gbk.html')
+  .to('./demoGbk.html', function(err, dist) {
+    if (!err) 
+      // do sth when it has been saved(gbk-encoded)
 });
 
 // fetch a gbk-encoded html page and get a utf-8 string
-gbk.fetch('http://abc.com/gbk.html').to('string', function(err,string){
-  if (!err) // do sth width utf-8 encoded string
+gbk
+  .fetch('http://abc.com/gbk.html')
+  .to('string', function(err,string){
+    if (!err) 
+      // do sth width utf-8 encoded string
 });
-````
+```
 Low level methods: from gbkBuffer
 
 e.g: `request({url: 'xxx.gbk.html', encoding:null })` will callback with a buffer
 
-````javascript
+```javascript
 // got an uft-8 string:
 var utf8String = gbk.toString('utf-8', gbkBuffer);
 
@@ -41,19 +49,21 @@ var anotherGbkBuffer = gbk.toBuffer('gbk', utf8String);
 
 // save a buffer
 fs.writeFile('xxx.html',anotherGbkBuffer,function(err){
-  if (err) return throw err;
+  if (err) 
+    return throw err;
+
   console.log('original gbk file saved!')
 });
-````
-### Run demo
+```
+### Run example
 
-````
+```bash
 $ git clone https://github.com/turingou/gbk.git && cd gbk
 $ node ./demo/demo.js
-````
+```
 
 ### API
-check this file: `index.js`
+Check this file: `index.js`
 
 ### Contributing
 - Fork this repo
