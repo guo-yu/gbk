@@ -5,7 +5,7 @@ var utils = require('./utils');
 
 module.exports = Page
 
-var Page = function(url, charset) {
+function Page(url, charset) {
   this.url = url
   this.charset = charset || 'utf-8'
 }
