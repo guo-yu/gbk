@@ -1,6 +1,6 @@
 {
-  "name": "gbk",
-  "version": "0.1.0",
+  "name": "request-gbk",
+  "version": "1.0.0",
   "description": "convert gbk to utf-8 made easy",
   "main": "index.js",
   "scripts": {
